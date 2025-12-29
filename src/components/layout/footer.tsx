@@ -2,20 +2,10 @@
 
 import { Code, Github, Linkedin, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useI18n, useChangeLocale, useCurrentLocale } from '@/locales/client';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-
+import { useI18n } from '@/locales/client';
 
 export default function Footer() {
   const t = useI18n();
-  const changeLocale = useChangeLocale();
-  const locale = useCurrentLocale();
 
   return (
     <footer className="bg-card border-t">
@@ -45,18 +35,6 @@ export default function Footer() {
               </a>
             </Button>
           </div>
-        </div>
-
-        <div className="flex justify-center mt-6">
-           <Select onValueChange={(newLocale) => changeLocale(newLocale as 'en' | 'es')} defaultValue={locale}>
-            <SelectTrigger className="w-[120px]">
-              <SelectValue placeholder="Language" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="en">English</SelectItem>
-              <SelectItem value="es">Español</SelectItem>
-            </SelectContent>
-          </Select>
         </div>
         
         <hr className="my-6 border-border" />
