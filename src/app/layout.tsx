@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: string };
+  params: { locale: string };
 }>) {
   return (
-    <I18nProviderClient>
-      <html lang="en" className="dark">
+    <I18nProviderClient locale={locale}>
+      <html lang={locale} className="dark">
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
