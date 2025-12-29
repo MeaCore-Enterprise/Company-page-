@@ -4,9 +4,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
 import { I18nProviderClient } from '@/locales/client';
 
-// This is a server component, so we can't use the client-side hooks to get the locale.
-// We are keeping the default metadata in English as a fallback.
-// For full SEO optimization, a more advanced i18n routing strategy would be needed.
 export const metadata: Metadata = {
   title: 'MeaCore Digital Solutions',
   description: 'Innovative Software, Automation, and MVP Solutions',

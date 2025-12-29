@@ -18,10 +18,12 @@ export default function Home() {
   const locale = useCurrentLocale();
 
   useEffect(() => {
-    document.title = t('meta.title');
-    const descriptionTag = document.querySelector('meta[name="description"]');
-    if (descriptionTag) {
-      descriptionTag.setAttribute('content', t('meta.description'));
+    if (typeof document !== 'undefined') {
+      document.title = t('meta.title');
+      const descriptionTag = document.querySelector('meta[name="description"]');
+      if (descriptionTag) {
+        descriptionTag.setAttribute('content', t('meta.description'));
+      }
     }
   }, [t, locale]);
 
