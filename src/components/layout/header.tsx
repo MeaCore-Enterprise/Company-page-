@@ -12,11 +12,10 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'How We Work', href: '#how-we-work' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Products', href: '#products' },
-    { name: 'Pricing', href: '#pricing' },
+    { name: 'Services', href: '/services' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Products', href: '/products' },
+    { name: 'Pricing', href: '/pricing' },
   ];
 
   return (
@@ -29,15 +28,15 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link key={link.name} href={link.href} className="text-muted-foreground transition-colors hover:text-foreground">
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-4">
            <Button asChild className="hidden md:flex">
-            <a href="#contact">Contact Us</a>
+            <Link href="/contact">Contact Us</Link>
           </Button>
 
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -54,12 +53,12 @@ export default function Header() {
                   <span className="font-bold text-lg">MeaCore</span>
                 </Link>
                 {navLinks.map((link) => (
-                  <a key={link.name} href={link.href} className="text-lg font-medium text-muted-foreground hover:text-foreground" onClick={closeMenu}>
+                  <Link key={link.name} href={link.href} className="text-lg font-medium text-muted-foreground hover:text-foreground" onClick={closeMenu}>
                     {link.name}
-                  </a>
+                  </Link>
                 ))}
                 <Button asChild className="mt-4">
-                  <a href="#contact" onClick={closeMenu}>Contact Us</a>
+                  <Link href="/contact" onClick={closeMenu}>Contact Us</Link>
                 </Button>
               </div>
             </SheetContent>

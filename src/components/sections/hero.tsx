@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -15,10 +16,10 @@ export default function Hero() {
           </p>
           <div className="flex justify-center gap-4 animate-fade-in-up animation-delay-600">
             <Button asChild size="lg">
-              <a href="#contact">Get Started</a>
+              <Link href="/contact">Get Started</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <a href="#services">Our Services</a>
+              <Link href="/services">Our Services</Link>
             </Button>
           </div>
         </div>

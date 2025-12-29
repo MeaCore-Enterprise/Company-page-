@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { Separator } from '../ui/separator';
+import Link from 'next/link';
 
 export default function Pricing() {
   const plans = [
@@ -125,7 +126,7 @@ const principles = [
               </CardContent>
               <CardFooter>
                 <Button asChild className="w-full" variant={plan.isPopular ? 'default' : 'outline'}>
-                  <a href="#contact">Contact Us</a>
+                  <Link href="/contact">Contact Us</Link>
                 </Button>
               </CardFooter>
             </Card>
@@ -147,7 +148,7 @@ const principles = [
                     <h4 className="font-bold text-lg mb-2">{item.name}</h4>
                     <p className="text-muted-foreground text-sm flex-grow">{item.description}</p>
                     <Button asChild variant="link" className="mt-4">
-                        <a href="#contact">Request Quote</a>
+                        <Link href="/contact">Request Quote</Link>
                     </Button>
                 </Card>
             ))}
