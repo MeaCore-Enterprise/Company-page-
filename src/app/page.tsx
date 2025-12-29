@@ -10,11 +10,12 @@ import FirestoreMetrics from '@/components/sections/firestore-metrics';
 import Pricing from '@/components/sections/pricing';
 import Contact from '@/components/sections/contact';
 import Footer from '@/components/layout/footer';
-import { useI18n } from '@/locales/client';
+import { useI18n, useCurrentLocale } from '@/locales/client';
 import { useEffect } from 'react';
 
 export default function Home() {
-  const { t } = useI18n();
+  const t = useI18n();
+  const locale = useCurrentLocale();
 
   useEffect(() => {
     document.title = t('meta.title');
@@ -22,7 +23,7 @@ export default function Home() {
     if (descriptionTag) {
       descriptionTag.setAttribute('content', t('meta.description'));
     }
-  }, [t]);
+  }, [t, locale]);
 
   return (
     <div className="flex flex-col min-h-dvh bg-background">
