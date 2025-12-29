@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
-import { I18nProvider } from '@/locales/client';
+import { I18nProviderClient } from '@/locales/client';
 
 // This is a server component, so we can't use the client-side hooks to get the locale.
 // We are keeping the default metadata in English as a fallback.
@@ -20,7 +20,7 @@ export default function RootLayout({
   params: { lang: string };
 }>) {
   return (
-    <I18nProvider>
+    <I18nProviderClient>
       <html lang="en" className="dark">
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,6 +32,6 @@ export default function RootLayout({
           <Toaster />
         </body>
       </html>
-    </I18nProvider>
+    </I18nProviderClient>
   );
 }
