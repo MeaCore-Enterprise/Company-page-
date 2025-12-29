@@ -8,7 +8,9 @@ import { Code, Menu } from 'lucide-react';
 
 const navLinks = [
   { name: 'Services', href: '#services' },
+  { name: 'How We Work', href: '#how-we-work' },
   { name: 'Portfolio', href: '#portfolio' },
+  { name: 'Products', href: '#products' },
   { name: 'Pricing', href: '#pricing' },
 ];
 
@@ -55,7 +57,7 @@ export default function Header() {
                   <a key={link.name} href={link.href} className="text-lg font-medium text-muted-foreground hover:text-foreground" onClick={closeMenu}>
                     {link.name}
                   </a>
-                ))}
+))}
                 <Button asChild className="mt-4">
                   <a href="#contact" onClick={closeMenu}>Contact Us</a>
                 </Button>
