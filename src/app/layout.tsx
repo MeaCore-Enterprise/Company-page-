@@ -11,11 +11,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
 }>) {
+  const locale = 'en'; // Set default locale
   return (
     <I18nProviderClient locale={locale}>
       <html lang={locale} className="dark">

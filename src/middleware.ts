@@ -3,8 +3,7 @@ import type { NextRequest } from 'next/server';
 
 const I18nMiddleware = createI18nMiddleware({
   locales: ['en', 'es'],
-  defaultLocale: 'en',
-  urlMappingStrategy: 'redirect',
+  defaultLocale: 'en'
 });
 
 export function middleware(request: NextRequest) {
