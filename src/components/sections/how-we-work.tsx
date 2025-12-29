@@ -5,22 +5,22 @@ const processSteps = [
   {
     icon: <Search className="h-10 w-10 text-primary" />,
     title: '1. Discovery',
-    description: 'We start by diving deep to understand your business, challenges, and goals to ensure our solution is perfectly aligned with your vision.',
+    description: 'We analyze your idea, business goals, technical constraints, and timeline. No assumptions, no buzzwords—just clarity.',
   },
   {
     icon: <DraftingCompass className="h-10 w-10 text-primary" />,
     title: '2. Solution Design',
-    description: 'Next, we architect a comprehensive, scalable, and efficient solution, creating detailed mockups and a clear technical roadmap.',
+    description: 'We define the architecture, scope, and tools required. You get a clear technical plan before any implementation starts.',
   },
   {
     icon: <Component className="h-10 w-10 text-primary" />,
     title: '3. Implementation',
-    description: 'Our expert developers bring the design to life, writing clean, high-quality code and integrating all necessary components.',
+    description: 'We build, iterate, and integrate. Clean code, scalable decisions, and constant progress visibility.',
   },
     {
     icon: <Repeat className="h-10 w-10 text-primary" />,
     title: '4. Iteration & Improvement',
-    description: 'We believe in continuous growth. After launch, we gather feedback, analyze performance, and iterate to enhance the product.',
+    description: 'We refine based on feedback, optimize performance, and prepare the product for real-world usage or scaling.',
   },
 ];
 
@@ -31,7 +31,7 @@ export default function HowWeWork() {
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold">How We Work</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Our streamlined process ensures clarity, efficiency, and outstanding results from concept to launch and beyond.
+            We follow a structured, transparent process designed to reduce risk and deliver results efficiently.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">

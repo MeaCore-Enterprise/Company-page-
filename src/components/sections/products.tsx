@@ -24,10 +24,11 @@ export default function Products() {
     <section id="products" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold">Internal Products & Experiments</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Our Products</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Beyond client work, we invest in building our own tools and products. This sharpens our skills and showcases our technical capability.
+            We don’t just build for clients—we build for ourselves. Here we showcase internal tools, experiments, and platforms developed in-house to test ideas, architectures, and workflows. No demos for hype. Just proof of work.
           </p>
+          <p className="mt-2 text-muted-foreground">These projects demonstrate real engineering decisions, product thinking, and hands-on experience with modern stacks.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {products.map((product) => (
