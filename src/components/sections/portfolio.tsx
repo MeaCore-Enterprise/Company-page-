@@ -3,19 +3,17 @@
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { useI18n } from '@/locales/client';
 
 export default function Portfolio() {
-  const { t } = useI18n();
   const dashboardImage = PlaceHolderImages.find(img => img.id === 'portfolio-dashboard');
 
   return (
     <section id="portfolio" className="py-20 md:py-32">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold">{t('portfolio.title')}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Our Work in Action</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            {t('portfolio.description')}
+            We pride ourselves on creating intuitive and powerful applications. Here’s a glimpse into the quality and craftsmanship we bring to every project.
           </p>
         </div>
         <div className="mt-12">

@@ -10,11 +10,8 @@ import FirestoreMetrics from '@/components/sections/firestore-metrics';
 import Pricing from '@/components/sections/pricing';
 import Contact from '@/components/sections/contact';
 import Footer from '@/components/layout/footer';
-import { useI18n } from '@/locales/client';
 
 export default function Home() {
-  const t = useI18n();
-
   return (
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />

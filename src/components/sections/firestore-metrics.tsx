@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { Line, LineChart, CartesianGrid, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { ChartTooltipContent, ChartContainer } from '@/components/ui/chart';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { useI18n } from '@/locales/client';
 
 const generateDataPoint = (time: Date) => ({
   time: time.toLocaleTimeString(),
@@ -12,7 +11,6 @@ const generateDataPoint = (time: Date) => ({
 });
 
 export default function FirestoreMetrics() {
-  const { t } = useI18n();
   const [chartData, setChartData] = useState(() => {
     const now = new Date();
     return Array.from({ length: 7 }, (_, i) => {
@@ -36,15 +34,15 @@ export default function FirestoreMetrics() {
     <section id="metrics" className="py-20 md:py-32">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold">{t('metrics.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Real-time Analytics</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-                {t('metrics.description')}
+                We integrate with modern data solutions like Firestore to provide you with live insights and powerful metrics, ensuring your application performs at its peak.
             </p>
         </div>
         <Card className="mt-12 max-w-4xl mx-auto">
             <CardHeader>
-                <CardTitle>{t('metrics.chart.title')}</CardTitle>
-                <CardDescription>{t('metrics.chart.description')}</CardDescription>
+                <CardTitle>Live User Activity</CardTitle>
+                <CardDescription>This chart shows simulated real-time user traffic.</CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="h-[300px] w-full">

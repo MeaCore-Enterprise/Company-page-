@@ -5,17 +5,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { Separator } from '../ui/separator';
-import { useI18n } from '@/locales/client';
 
 export default function Pricing() {
-  const { t } = useI18n();
-
   const plans = [
     {
-      name: t('pricing.plans.0.name'),
+      name: 'Basic',
       price: '$499',
-      priceDescription: t('pricing.plans.0.priceDescription'),
-      description: t('pricing.plans.0.description'),
+      priceDescription: 'Starting from',
+      description: 'Best for small businesses or early ideas. Landing pages or simple websites, basic automation, prototypes. Ideal for validating ideas quickly.',
       features: [
         '1-3 Pages Website',
         'Basic Automation',
@@ -25,10 +22,10 @@ export default function Pricing() {
       isPopular: false,
     },
     {
-      name: t('pricing.plans.1.name'),
+      name: 'Professional',
       price: '$999',
-      priceDescription: t('pricing.plans.1.priceDescription'),
-      description: t('pricing.plans.1.description'),
+      priceDescription: 'Starting from',
+      description: 'For growing products and internal tools. Custom web apps, process automation, dynamic dashboards, and MVP development.',
       features: [
         'Up to 10 Pages Web App',
         'Advanced Automation',
@@ -38,10 +35,10 @@ export default function Pricing() {
       isPopular: true,
     },
     {
-      name: t('pricing.plans.2.name'),
-      price: t('pricing.plans.2.price'),
+      name: 'Enterprise',
+      price: 'Custom',
       priceDescription: '',
-      description: t('pricing.plans.2.description'),
+      description: 'For complex systems and long-term collaboration. Full-stack platforms, scalable architectures, and ongoing support.',
       features: [
         'Unlimited Pages/Features',
         'Custom Integrations',
@@ -55,38 +52,38 @@ export default function Pricing() {
   const commissions = [
     {
         icon: <LayoutTemplate className="h-8 w-8 text-primary" />,
-        name: t('pricing.commissions.0.name'),
-        description: t('pricing.commissions.0.description')
+        name: 'Landing Page',
+        description: 'A single, conversion-focused page to launch your product.'
     },
     {
         icon: <DraftingCompass className="h-8 w-8 text-primary" />,
-        name: t('pricing.commissions.1.name'),
-        description: t('pricing.commissions.1.description')
+        name: 'Dashboard Mockup',
+        description: 'A custom dashboard to visualize your key metrics.'
     },
     {
         icon: <Bot className="h-8 w-8 text-primary" />,
-        name: t('pricing.commissions.2.name'),
-        description: t('pricing.commissions.2.description')
+        name: 'Task Automation',
+        description: 'A specific workflow automation to save you time.'
     },
     {
         icon: <Fingerprint className="h-8 w-8 text-primary" />,
-        name: t('pricing.commissions.3.name'),
-        description: t('pricing.commissions.3.description')
+        name: 'Branding Assets',
+        description: 'Business cards and digital assets for your company.'
     }
 ]
 
 const principles = [
     {
         icon: <BadgeCheck className="h-6 w-6 text-primary" />,
-        text: t('pricing.principles.0')
+        text: 'Clear deliverables'
     },
     {
         icon: <BadgeCheck className="h-6 w-6 text-primary" />,
-        text: t('pricing.principles.1')
+        text: 'No hidden costs'
     },
     {
         icon: <BadgeCheck className="h-6 w-6 text-primary" />,
-        text: t('pricing.principles.2')
+        text: 'Solutions that actually scale'
     }
 ]
 
@@ -94,9 +91,9 @@ const principles = [
     <section id="pricing" className="py-20 md:py-32">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold">{t('pricing.title')}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Pricing Philosophy</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            {t('pricing.description')}
+            Our pricing is transparent and flexible. The plans below represent starting points, not rigid packages. Final pricing depends on scope, complexity, and timeline.
           </p>
            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mt-6">
                 {principles.map((p, i) => (
@@ -106,14 +103,14 @@ const principles = [
                     </div>
                 ))}
            </div>
-           <p className="mt-4 text-muted-foreground">{t('pricing.customEngagement')}</p>
+           <p className="mt-4 text-muted-foreground">If your needs don’t fit a box, we design a custom engagement.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           {plans.map((plan) => (
             <Card key={plan.name} className={cn('flex flex-col', plan.isPopular && 'border-primary ring-2 ring-primary shadow-lg')}>
               {plan.isPopular && (
                 <div className="bg-primary text-primary-foreground text-center text-sm font-semibold py-1 rounded-t-lg">
-                  {t('pricing.mostPopular')}
+                  Most Popular
                 </div>
               )}
               <CardHeader className="text-center">
@@ -128,7 +125,7 @@ const principles = [
               </CardContent>
               <CardFooter>
                 <Button asChild className="w-full" variant={plan.isPopular ? 'default' : 'outline'}>
-                  <a href="#contact">{t('nav.contact')}</a>
+                  <a href="#contact">Contact Us</a>
                 </Button>
               </CardFooter>
             </Card>
@@ -136,9 +133,9 @@ const principles = [
         </div>
         <Separator className="my-16" />
          <div className="text-center max-w-3xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold">{t('pricing.commissionsTitle')}</h3>
+            <h3 className="text-2xl md:text-3xl font-bold">Fixed-Scope Services (Quick Wins)</h3>
             <p className="mt-4 text-lg text-muted-foreground">
-                {t('pricing.commissionsDescription')}
+                For clients who want fast, well-defined deliverables: clear scope, fixed price, and fast delivery.
             </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 max-w-6xl mx-auto">
@@ -150,7 +147,7 @@ const principles = [
                     <h4 className="font-bold text-lg mb-2">{item.name}</h4>
                     <p className="text-muted-foreground text-sm flex-grow">{item.description}</p>
                     <Button asChild variant="link" className="mt-4">
-                        <a href="#contact">{t('pricing.requestQuote')}</a>
+                        <a href="#contact">Request Quote</a>
                     </Button>
                 </Card>
             ))}

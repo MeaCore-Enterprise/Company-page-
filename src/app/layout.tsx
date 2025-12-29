@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
-import { I18nProviderClient } from '@/locales/client';
 
 export const metadata: Metadata = {
   title: 'MeaCore Digital Solutions',
@@ -14,11 +13,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = 'en';
 
   return (
-    <I18nProviderClient locale={locale}>
-      <html lang={locale} className="dark">
+      <html lang="en" className="dark">
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -29,6 +26,5 @@ export default function RootLayout({
           <Toaster />
         </body>
       </html>
-    </I18nProviderClient>
   );
 }

@@ -17,21 +17,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
-import { useI18n } from "@/locales/client";
 
 export default function Contact() {
   const { toast } = useToast();
-  const { t } = useI18n();
 
   const formSchema = z.object({
     name: z.string().min(2, {
-      message: t('contact.form.name.error'),
+      message: 'Name must be at least 2 characters.',
     }),
     email: z.string().email({
-      message: t('contact.form.email.error'),
+      message: 'Please enter a valid email address.',
     }),
     message: z.string().min(10, {
-      message: t('contact.form.message.error'),
+      message: 'Message must be at least 10 characters.',
     }),
   });
 
@@ -48,8 +46,8 @@ export default function Contact() {
     console.log(values);
     form.reset();
     toast({
-      title: t('contact.toast.title'),
-      description: t('contact.toast.description'),
+      title: 'Message Sent!',
+      description: "Thanks for reaching out. We'll get back to you soon.",
     });
   }
 
@@ -58,15 +56,15 @@ export default function Contact() {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('contact.title')}</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Build Together</h2>
                 <p className="text-muted-foreground text-lg mb-8">
-                    {t('contact.description')}
+                    Have a project in mind or just want to say hello? Drop us a line. We are excited to hear about your ideas and help you bring them to life.
                 </p>
             </div>
           <Card className="w-full max-w-lg mx-auto">
             <CardHeader>
-                <CardTitle>{t('nav.contact')}</CardTitle>
-                <CardDescription>{t('contact.form.description')}</CardDescription>
+                <CardTitle>Contact Us</CardTitle>
+                <CardDescription>Fill out the form below to get in touch.</CardDescription>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -76,9 +74,9 @@ export default function Contact() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{t('contact.form.name.label')}</FormLabel>
+                        <FormLabel>Name</FormLabel>
                         <FormControl>
-                          <Input placeholder={t('contact.form.name.placeholder')} {...field} />
+                          <Input placeholder="Your Name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -89,9 +87,9 @@ export default function Contact() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{t('contact.form.email.label')}</FormLabel>
+                        <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder={t('contact.form.email.placeholder')} {...field} />
+                          <Input placeholder="your.email@example.com" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -102,15 +100,15 @@ export default function Contact() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{t('contact.form.message.label')}</FormLabel>
+                        <FormLabel>Message</FormLabel>
                         <FormControl>
-                          <Textarea placeholder={t('contact.form.message.placeholder')} className="min-h-[120px]" {...field} />
+                          <Textarea placeholder="Tell us about your project..." className="min-h-[120px]" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" className="w-full">{t('contact.form.submit')}</Button>
+                  <Button type="submit" className="w-full">Send Message</Button>
                 </form>
               </Form>
             </CardContent>
