@@ -1,20 +1,11 @@
 'use client';
 
-import { Code, Github, Linkedin, Twitter, Languages } from 'lucide-react';
+import { Code, Github, Linkedin, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useI18n, useChangeLocale, useCurrentLocale } from '@/locales/client';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-
+import { useI18n } from '@/locales/client';
 
 export default function Footer() {
   const t = useI18n();
-  const changeLocale = useChangeLocale();
-  const currentLocale = useCurrentLocale();
 
   return (
     <footer className="bg-card border-t">
@@ -47,25 +38,8 @@ export default function Footer() {
         </div>
         
         <hr className="my-6 border-border" />
-        <div className="flex justify-between items-center text-sm text-muted-foreground">
+        <div className="flex justify-center items-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} MeaCore Digital Solutions. {t('footer.rights')}</p>
-          
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm">
-                <Languages className="h-4 w-4 mr-2" />
-                {currentLocale.toUpperCase()}
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => changeLocale('en')}>
-                English
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => changeLocale('es')}>
-                Español
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
       </div>
     </footer>
