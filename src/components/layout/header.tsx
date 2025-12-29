@@ -5,19 +5,21 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Code, Menu } from 'lucide-react';
-
-const navLinks = [
-  { name: 'Services', href: '#services' },
-  { name: 'How We Work', href: '#how-we-work' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Products', href: '#products' },
-  { name: 'Pricing', href: '#pricing' },
-];
+import { useI18n } from '@/locales/client';
 
 export default function Header() {
+  const { t } = useI18n();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  const navLinks = [
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.howWeWork'), href: '#how-we-work' },
+    { name: t('nav.portfolio'), href: '#portfolio' },
+    { name: t('nav.products'), href: '#products' },
+    { name: t('nav.pricing'), href: '#pricing' },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -37,7 +39,7 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
            <Button asChild className="hidden md:flex">
-            <a href="#contact">Contact Us</a>
+            <a href="#contact">{t('nav.contact')}</a>
           </Button>
 
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -57,9 +59,9 @@ export default function Header() {
                   <a key={link.name} href={link.href} className="text-lg font-medium text-muted-foreground hover:text-foreground" onClick={closeMenu}>
                     {link.name}
                   </a>
-))}
+                ))}
                 <Button asChild className="mt-4">
-                  <a href="#contact" onClick={closeMenu}>Contact Us</a>
+                  <a href="#contact" onClick={closeMenu}>{t('nav.contact')}</a>
                 </Button>
               </div>
             </SheetContent>
