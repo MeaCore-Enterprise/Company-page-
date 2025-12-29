@@ -1,5 +1,77 @@
-import Products from '@/components/sections/products';
+'use client';
 
-export default function ProductsPage() {
-  return <Products />;
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { FlaskConical, Beaker, Blocks, FileText, Cpu, Archive } from 'lucide-react';
+import Link from 'next/link';
+
+export default function Products() {
+  const products = [
+    {
+      icon: <Blocks className="h-10 w-10 text-primary" />,
+      title: 'Haker-MCP',
+      description: 'An internal ecosystem designed to streamline our development process and enhance project management.',
+      href: '/products/haker-mcp'
+    },
+    {
+      icon: <FlaskConical className="h-10 w-10 text-primary" />,
+      title: 'MeaCode-Studio',
+      description: 'A powerful and intuitive code editor for modern web development.',
+      href: '/products/meacode-studio'
+    },
+    {
+      icon: <Cpu className="h-10 w-10 text-primary" />,
+      title: 'MeaCore-IA',
+      description: 'Leverage artificial intelligence to automate and optimize your business processes.',
+      href: '/products/meacore-ia'
+    },
+    {
+      icon: <FileText className="h-10 w-10 text-primary" />,
+      title: 'Generador de CV',
+      description: 'Create a professional CV in minutes with our easy-to-use generator.',
+      href: '/products/generador-cv'
+    },
+    {
+      icon: <Archive className="h-10 w-10 text-primary" />,
+      title: 'LEGADO',
+      description: 'Our legacy platform, a testament to our long-standing commitment to quality.',
+      href: '/products/legado'
+    },
+    {
+      icon: <Beaker className="h-10 w-10 text-primary" />,
+      title: 'Internal Tooling',
+      description: 'A collection of proprietary tools for automation, testing, and deployment that ensures quality and speed for our clients.',
+      href: '#'
+    },
+  ];
+  
+  return (
+    <section id="products" className="py-20 md:py-32 bg-card">
+      <div className="container mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold">Our Products</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            We don’t just build for clients—we build for ourselves. Here we showcase internal tools, experiments, and platforms developed in-house to test ideas, architectures, and workflows.
+          </p>
+          <p className="mt-2 text-muted-foreground">These projects demonstrate real engineering decisions, product thinking, and hands-on experience with modern stacks. No demos for hype. Just proof of work.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          {products.map((product) => (
+            <Link key={product.title} href={product.href} className="block">
+                <Card className="text-center hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
+                <CardHeader>
+                    <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
+                    {product.icon}
+                    </div>
+                    <CardTitle>{product.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                    <p className="text-muted-foreground">{product.description}</p>
+                </CardContent>
+                </Card>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

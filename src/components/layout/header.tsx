@@ -24,11 +24,11 @@ export default function Header() {
   ];
   
   const productLinks = [
-      { name: 'Haker-MCP', href: '/products#haker-mcp'},
-      { name: 'MeaCode-Studio', href: '/products#meacode-studio'},
-      { name: 'MeaCore-IA', href: '/products#meacore-ia'},
-      { name: 'Generador de CV', href: '/products#generador-cv'},
-      { name: 'LEGADO', href: '/products#legado'}
+      { name: 'Haker-MCP', href: '/products/haker-mcp'},
+      { name: 'MeaCode-Studio', href: '/products/meacode-studio'},
+      { name: 'MeaCore-IA', href: '/products/meacore-ia'},
+      { name: 'Generador de CV', href: '/products/generador-cv'},
+      { name: 'LEGADO', href: '/products/legado'}
   ]
 
   return (
