@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Code, Menu, ChevronDown } from 'lucide-react';
 import {
   DropdownMenu,
@@ -72,6 +72,9 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+              </SheetHeader>
               <div className="flex flex-col gap-6 pt-10">
                 <Link href="/" className="flex items-center gap-2 mb-4" onClick={closeMenu}>
                   <Code className="h-6 w-6 text-primary" />
