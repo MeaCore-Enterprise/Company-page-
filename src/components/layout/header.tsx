@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetDescription } from '@/components/ui/sheet';
 import { Code, Menu, ChevronDown } from 'lucide-react';
 import {
   DropdownMenu,
@@ -74,6 +74,7 @@ export default function Header() {
             <SheetContent side="right">
               <SheetHeader>
                 <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <SheetDescription className="sr-only">A list of navigation links for the MeaCore website.</SheetDescription>
               </SheetHeader>
               <div className="flex flex-col gap-6 pt-10">
                 <Link href="/" className="flex items-center gap-2 mb-4" onClick={closeMenu}>
