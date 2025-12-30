@@ -27,6 +27,7 @@ export default function Portfolio() {
                   width={1200}
                   height={800}
                   className="w-full h-auto"
+                  priority
                 />
               )}
             </CardContent>
