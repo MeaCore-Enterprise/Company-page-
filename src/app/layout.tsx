@@ -5,6 +5,8 @@ import { cn } from '@/lib/utils';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
+import { I18nProviderClient } from '@/locales/client';
+
 export const metadata: Metadata = {
   title: 'MeaCore Enterprise | Desarrollo de Software Profesional',
   description: 'Ingeniería de software de clase mundial: Web, Móvil, Escritorio y Paquetes especializados.',
@@ -22,14 +24,17 @@ export default function RootLayout({
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+          <link rel="icon" href="/logo.png" />
         </head>
         <body className={cn("font-body antialiased flex flex-col min-h-dvh bg-background")}>
-          <Header />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
-          <Toaster />
+          <I18nProviderClient locale="es">
+            <Header />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+            <Toaster />
+          </I18nProviderClient>
         </body>
       </html>
   );
