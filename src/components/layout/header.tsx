@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetDescription } from '@/components/ui/sheet';
-import { Code, Menu, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,25 +19,22 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   const navLinks = [
-    { name: 'Services', href: '/services' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Pricing', href: '/pricing' },
+    { name: 'Servicios', href: '#services' },
+    { name: 'Proyectos', href: '#portfolio' },
+    { name: 'Planes', href: '#pricing' },
   ];
   
   const productLinks = [
-      { name: 'Haker-MCP', href: '/products/haker-mcp'},
-      { name: 'MeaCode-Studio', href: '/products/meacode-studio'},
-      { name: 'MeaCore-IA', href: '/products/meacore-ia'},
-      { name: 'Generador de CV', href: '/products/generador-cv'},
-      { name: 'LEGADO', href: '/products/legado'}
+      { name: 'MeaCode Studio', href: 'https://github.com/MeaCore-Enterprise/MeaCode-Studio'},
+      { name: 'Haker-MCP', href: '#'},
+      { name: 'Nexusify SDK', href: '#'},
   ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2">
-          <Code className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg">MeaCore</span>
+          <Image src="/logo.png" alt="MeaCore Enterprise" width={120} height={40} className="h-8 w-auto object-contain" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -47,7 +45,7 @@ export default function Header() {
           ))}
            <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground focus:outline-none">
-              Products <ChevronDown className="h-4 w-4" />
+              Productos <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               {productLinks.map((link) => (
@@ -61,7 +59,7 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
            <Button asChild className="hidden md:flex">
-            <Link href="/contact">Contact Us</Link>
+            <Link href="#contact">Contáctanos</Link>
           </Button>
 
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -78,15 +76,14 @@ export default function Header() {
               </SheetHeader>
               <div className="flex flex-col gap-6 pt-10">
                 <Link href="/" className="flex items-center gap-2 mb-4" onClick={closeMenu}>
-                  <Code className="h-6 w-6 text-primary" />
-                  <span className="font-bold text-lg">MeaCore</span>
+                  <Image src="/logo.png" alt="MeaCore Enterprise" width={120} height={40} className="h-8 w-auto object-contain" />
                 </Link>
                 {navLinks.map((link) => (
                   <Link key={link.name} href={link.href} className="text-lg font-medium text-muted-foreground hover:text-foreground" onClick={closeMenu}>
                     {link.name}
                   </Link>
                 ))}
-                 <div className="text-lg font-medium text-muted-foreground">Products</div>
+                 <div className="text-lg font-medium text-muted-foreground">Productos</div>
                   <div className="flex flex-col gap-4 pl-4">
                     {productLinks.map((link) => (
                       <Link key={link.name} href={link.href} className="text-muted-foreground hover:text-foreground" onClick={closeMenu}>
@@ -95,7 +92,7 @@ export default function Header() {
                     ))}
                   </div>
                 <Button asChild className="mt-4">
-                  <Link href="/contact" onClick={closeMenu}>Contact Us</Link>
+                  <Link href="#contact" onClick={closeMenu}>Contáctanos</Link>
                 </Button>
               </div>
             </SheetContent>

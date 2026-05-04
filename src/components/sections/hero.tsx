@@ -2,24 +2,27 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { useI18n } from '@/locales/client';
 
 export default function Hero() {
+  const t = useI18n();
+
   return (
     <section id="hero" className="py-24 md:py-40">
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 animate-fade-in-up">
-            Digital Solutions to Propel Your Business
+            {t('hero.title')}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 animate-fade-in-up animation-delay-300">
-            We specialize in custom software development, process automation, and rapid MVP deployment to turn your vision into reality.
+            {t('hero.subtitle')}
           </p>
           <div className="flex justify-center gap-4 animate-fade-in-up animation-delay-600">
             <Button asChild size="lg">
-              <Link href="/contact">Get Started</Link>
+              <Link href="#contact">{t('hero.cta.primary')}</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/services">Our Services</Link>
+              <Link href="#services">{t('hero.cta.secondary')}</Link>
             </Button>
           </div>
         </div>

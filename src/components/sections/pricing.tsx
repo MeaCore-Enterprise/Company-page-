@@ -1,79 +1,82 @@
 'use client';
 
-import { Check, Bot, Fingerprint, BadgeCheck, DraftingCompass, LayoutTemplate, Search, Component, Repeat, Code, Rocket, BrainCircuit, Wrench } from 'lucide-react';
+import { Check, Bot, Fingerprint, BadgeCheck, DraftingCompass, LayoutTemplate, Search, Component, Repeat, Code, Rocket, BrainCircuit, Wrench, Globe, MonitorSmartphone, Package, ShieldCheck, Gauge } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { Separator } from '../ui/separator';
 import Link from 'next/link';
+import { useI18n } from '@/locales/client';
 
 export default function Pricing() {
+  const t = useI18n();
+
   const plans = [
     {
-      name: 'Basic',
-      price: '$299',
-      priceDescription: 'From',
+      name: t('pricing.plans.0.name'),
+      price: 'MVP',
+      priceDescription: t('pricing.plans.0.priceDescription'),
       features: [
-        'Landing pages',
-        'Small automations',
-        'One-off scripts',
-        'Fast delivery'
+        t('services.cards.0.title'),
+        t('services.cards.1.title'),
+        t('pricing.principles.0'),
+        t('pricing.principles.1')
       ],
-      cta: 'Start small',
-      isPopular: false,
-    },
-    {
-      name: 'Professional',
-      price: '$899',
-      priceDescription: 'From',
-      features: [
-        'MVP development',
-        'SaaS features',
-        'API integrations',
-        'Scalable architecture'
-      ],
-      cta: 'Build your MVP',
+      cta: t('pricing.requestQuote'),
       isPopular: true,
     },
     {
-      name: 'Enterprise',
-      price: 'Custom',
+      name: t('pricing.plans.1.name'),
+      price: 'CORP',
+      priceDescription: t('pricing.plans.1.priceDescription'),
+      features: [
+        t('pricing.plans.1.description'),
+        t('pricing.principles.2'),
+        'SLA & Soporte',
+        'Arquitectura dedicada'
+      ],
+      cta: t('pricing.requestQuote'),
+      isPopular: false,
+    },
+    {
+      name: t('pricing.plans.2.name'),
+      price: t('pricing.plans.2.price'),
       priceDescription: '',
       features: [
-        'Complex systems',
-        'Long-term development',
-        'Internal tools',
-        'Consulting & architecture'
+        t('pricing.plans.2.description'),
+        t('services.cards.2.title'),
+        'Optimización',
+        'Auditoría'
       ],
-      cta: 'Talk to us',
+      cta: t('pricing.requestQuote'),
       isPopular: false,
     },
   ];
 
   const commissions = [
     {
-        icon: <LayoutTemplate className="h-8 w-8 text-primary" />,
-        name: 'Landing Page',
-        price: '$149',
-        priceDescription: 'From'
+        icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+        name: t('pricing.commissions.0.name'),
+        price: 'Full',
+        priceDescription: 'Análisis'
     },
     {
-        icon: <Bot className="h-8 w-8 text-primary" />,
-        name: 'Automation Script',
-        price: '$199',
-        priceDescription: 'From'
+        icon: <Gauge className="h-8 w-8 text-primary" />,
+        name: t('pricing.commissions.1.name'),
+        price: 'WPO',
+        priceDescription: 'Turbo'
     },
     {
-        icon: <BrainCircuit className="h-8 w-8 text-primary" />,
-        name: 'AI Integration',
-        price: '$299',
-        priceDescription: 'From'
+        icon: <MonitorSmartphone className="h-8 w-8 text-primary" />,
+        name: t('pricing.commissions.2.name'),
+        price: 'V1.0',
+        priceDescription: 'Build'
     },
     {
-        icon: <Wrench className="h-8 w-8 text-primary" />,
-        name: 'Bug Fix / Refactor',
-        price: '$99',
-        priceDescription: 'From'
+        icon: <Package className="h-8 w-8 text-primary" />,
+        name: t('pricing.commissions.3.name'),
+        price: 'Lib',
+        priceDescription: 'Core'
     }
 ]
 
@@ -105,18 +108,17 @@ const processSteps = [
     <section id="pricing" className="py-20 md:py-32">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold">Pricing that scales with your project</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">{t('pricing.title')}</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Transparent starting prices. Custom solutions when needed.
+            {t('pricing.description')}
           </p>
-           <p className="mt-4 text-sm text-muted-foreground">All prices are starting points. Final cost depends on scope, timeline, and complexity.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           {plans.map((plan) => (
             <Card key={plan.name} className={cn('flex flex-col border-2', plan.isPopular ? 'border-primary' : 'border-card')}>
               {plan.isPopular && (
                 <div className="bg-primary text-primary-foreground text-center text-sm font-semibold py-1.5 rounded-t-md -mt-px">
-                  Most Popular
+                  {t('pricing.mostPopular')}
                 </div>
               )}
               <CardHeader className={cn("text-center pt-8", !plan.isPopular && "pt-12")}>
@@ -136,7 +138,7 @@ const processSteps = [
                     ))}
                 </ul>
                 <Button asChild className="w-full mt-auto" variant={plan.isPopular ? 'default' : 'outline'}>
-                  <Link href="/contact">{plan.cta}</Link>
+                  <Link href="#contact">{plan.cta}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -146,9 +148,9 @@ const processSteps = [
         <Separator className="my-16 md:my-24" />
 
          <div className="text-center max-w-3xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold">Specific Services</h3>
+            <h3 className="text-2xl md:text-3xl font-bold">{t('pricing.commissionsTitle')}</h3>
             <p className="mt-4 text-lg text-muted-foreground">
-                Looking for a well-defined deliverable? These fixed-scope services are perfect entry points.
+                {t('pricing.commissionsDescription')}
             </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 max-w-6xl mx-auto">
@@ -163,7 +165,7 @@ const processSteps = [
                         <span className="text-2xl font-bold">{item.price}</span>
                     </div>
                     <Button asChild variant="link" className="mt-auto">
-                        <Link href="/contact">Request a quote</Link>
+                        <Link href="#contact">{t('pricing.requestQuote')}</Link>
                     </Button>
                 </Card>
             ))}
@@ -171,34 +173,13 @@ const processSteps = [
 
         <Separator className="my-16 md:my-24" />
 
-        <div className="text-center max-w-3xl mx-auto">
-          <h3 className="text-2xl md:text-3xl font-bold">How We Work</h3>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 max-w-5xl mx-auto">
-          {processSteps.map((step) => (
-            <Card key={step.title} className="text-center bg-transparent border-none shadow-none">
-              <CardHeader>
-                <div className="mx-auto bg-primary/10 p-3 rounded-full w-fit mb-3">
-                  {step.icon}
-                </div>
-                <CardTitle className="text-lg">{step.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <p className="text-muted-foreground">{step.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <Separator className="my-16 md:my-24" />
-
         <div className="text-center max-w-xl mx-auto bg-card p-8 md:p-12 rounded-lg">
-            <h3 className="text-2xl md:text-3xl font-bold">Not sure what plan fits your idea?</h3>
+            <h3 className="text-2xl md:text-3xl font-bold">{t('pricing.customEngagement')}</h3>
             <p className="mt-4 text-lg text-muted-foreground">
-                Let’s talk and figure it out.
+                {t('contact.description')}
             </p>
             <Button asChild size="lg" className="mt-8">
-              <Link href="/contact">Request a quote</Link>
+              <Link href="#contact">{t('pricing.requestQuote')}</Link>
             </Button>
         </div>
 

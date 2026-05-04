@@ -6,8 +6,8 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'MeaCore Digital Solutions',
-  description: 'Innovative Software, Automation, and MVP Solutions',
+  title: 'MeaCore Enterprise | Desarrollo de Software Profesional',
+  description: 'Ingeniería de software de clase mundial: Web, Móvil, Escritorio y Paquetes especializados.',
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
 
   return (
-      <html lang="en" className="dark">
+      <html lang="es" className="dark">
         <head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -1,24 +1,27 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CodeXml, Bot, Rocket } from 'lucide-react';
+import { Globe, MonitorSmartphone, Package } from 'lucide-react';
+import { useI18n } from '@/locales/client';
 
 export default function Services() {
+  const t = useI18n();
+
   const services = [
     {
-      icon: <CodeXml className="h-10 w-10 text-primary" />,
-      title: 'Software Development',
-      description: 'We build scalable and robust web applications tailored to your business needs, from simple websites to complex platforms.',
+      icon: <Globe className="h-10 w-10 text-primary" />,
+      title: t('services.cards.0.title'),
+      description: t('services.cards.0.description'),
     },
     {
-      icon: <Bot className="h-10 w-10 text-primary" />,
-      title: 'Process Automation',
-      description: 'Streamline your operations by automating repetitive tasks. We create custom bots and workflows to boost efficiency and reduce costs.',
+      icon: <MonitorSmartphone className="h-10 w-10 text-primary" />,
+      title: t('services.cards.1.title'),
+      description: t('services.cards.1.description'),
     },
     {
-      icon: <Rocket className="h-10 w-10 text-primary" />,
-      title: 'MVP Solutions',
-      description: 'Launch your idea quickly with a Minimum Viable Product. We help you validate your concept and get to market faster with core features.',
+      icon: <Package className="h-10 w-10 text-primary" />,
+      title: t('services.cards.2.title'),
+      description: t('services.cards.2.description'),
     },
   ];
 
@@ -26,9 +29,9 @@ export default function Services() {
     <section id="services" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold">What We Offer</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">{t('services.title')}</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Our expertise lies in turning complex challenges into simple, elegant solutions that drive growth and efficiency for your business.
+            {t('services.description')}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
