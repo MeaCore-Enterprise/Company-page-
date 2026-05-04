@@ -115,16 +115,19 @@ const processSteps = [
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           {plans.map((plan) => (
-            <Card key={plan.name} className={cn('flex flex-col border-2', plan.isPopular ? 'border-primary' : 'border-card')}>
+            <Card key={plan.name} className={cn('flex flex-col glass-card border-2 relative overflow-hidden', plan.isPopular ? 'border-primary shadow-[0_0_30px_rgba(var(--primary),0.2)]' : 'border-white/5')}>
               {plan.isPopular && (
-                <div className="bg-primary text-primary-foreground text-center text-sm font-semibold py-1.5 rounded-t-md -mt-px">
-                  {t('pricing.mostPopular')}
-                </div>
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none" />
+                  <div className="bg-primary text-primary-foreground text-center text-sm font-bold tracking-wider uppercase py-2">
+                    {t('pricing.mostPopular')}
+                  </div>
+                </>
               )}
-              <CardHeader className={cn("text-center pt-8", !plan.isPopular && "pt-12")}>
+              <CardHeader className={cn("text-center pt-8 relative z-10", !plan.isPopular && "pt-12")}>
                 <CardTitle className="text-2xl">{plan.name}</CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow flex flex-col">
+              <CardContent className="flex-grow flex flex-col relative z-10">
                 <div className="text-center mb-6">
                     {plan.priceDescription && <p className="text-muted-foreground">{plan.priceDescription}</p>}
                   <span className="text-4xl font-bold">{plan.price}</span>

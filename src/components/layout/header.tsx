@@ -31,7 +31,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full glass border-b-0">
       <div className="container flex h-16 items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.png" alt="MeaCore Enterprise" width={120} height={40} className="h-8 w-auto object-contain" />

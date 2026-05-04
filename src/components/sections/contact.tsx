@@ -63,7 +63,7 @@ export default function Contact() {
                     {t('contact.description')}
                 </p>
             </div>
-          <Card className="w-full max-w-lg mx-auto">
+          <Card className="w-full max-w-lg mx-auto glass-card">
             <CardHeader>
                 <CardTitle>{t('nav.contact')}</CardTitle>
                 <CardDescription>{t('contact.form.description')}</CardDescription>

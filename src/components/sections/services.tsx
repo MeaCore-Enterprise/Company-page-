@@ -34,17 +34,17 @@ export default function Services() {
             {t('services.description')}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {services.map((service, index) => (
-            <Card key={index} className="text-center hover:shadow-xl transition-shadow duration-300">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          {services.map((service) => (
+            <Card key={service.title} className="glass-card text-center group cursor-default">
               <CardHeader>
-                <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
+                <div className="mx-auto bg-primary/10 p-5 rounded-2xl w-fit mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                   {service.icon}
                 </div>
-                <CardTitle>{service.title}</CardTitle>
+                <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{service.description}</p>
+                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
               </CardContent>
             </Card>
           ))}
