@@ -25,10 +25,9 @@ export default function Header() {
   ];
   
   const productLinks = [
-      { name: 'MeaCode Studio', href: 'https://github.com/MeaCore-Enterprise/MeaCode-Studio'},
-      { name: 'Haker-MCP', href: '#'},
-      { name: 'Nexusify SDK', href: '#'},
-  ]
+      { name: 'MeaCore Launcher', href: 'https://meacorelauncher.keyler-ender-777.workers.dev/'},
+      { name: 'Ver todos los Productos', href: '/products'},
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full glass border-b-0">
