@@ -33,8 +33,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full glass border-b-0">
       <div className="container flex h-16 items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="MeaCore Enterprise" width={120} height={40} className="h-8 w-auto object-contain" />
+        <Link href="/" className="flex items-center gap-3">
+          <Image src="/logo.png" alt="MeaCore Icon" width={40} height={40} className="h-10 w-10 object-contain drop-shadow-sm" style={{ imageRendering: 'high-quality' }} />
+          <span className="text-xl font-extrabold tracking-tight text-foreground">MeaCore</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -75,8 +76,9 @@ export default function Header() {
                 <SheetDescription className="sr-only">A list of navigation links for the MeaCore website.</SheetDescription>
               </SheetHeader>
               <div className="flex flex-col gap-6 pt-10">
-                <Link href="/" className="flex items-center gap-2 mb-4" onClick={closeMenu}>
-                  <Image src="/logo.png" alt="MeaCore Enterprise" width={120} height={40} className="h-8 w-auto object-contain" />
+                <Link href="/" className="flex items-center gap-3 mb-4" onClick={closeMenu}>
+                  <Image src="/logo.png" alt="MeaCore Icon" width={40} height={40} className="h-10 w-10 object-contain drop-shadow-sm" style={{ imageRendering: 'high-quality' }} />
+                  <span className="text-xl font-extrabold tracking-tight text-foreground">MeaCore</span>
                 </Link>
                 {navLinks.map((link) => (
                   <Link key={link.name} href={link.href} className="text-lg font-medium text-muted-foreground hover:text-foreground" onClick={closeMenu}>

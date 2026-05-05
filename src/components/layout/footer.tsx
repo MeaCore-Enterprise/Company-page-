@@ -12,8 +12,9 @@ export default function Footer() {
     <footer className="bg-card border-t">
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col items-center text-center">
-          <a href="#" className="flex items-center gap-2 mb-4">
-            <Image src="/logo.png" alt="MeaCore Enterprise" width={140} height={45} className="h-10 w-auto object-contain" />
+          <a href="#" className="flex items-center justify-center gap-3 mb-6">
+            <Image src="/logo.png" alt="MeaCore Icon" width={48} height={48} className="h-12 w-12 object-contain drop-shadow-sm" style={{ imageRendering: 'high-quality' }} />
+            <span className="text-2xl font-extrabold tracking-tight text-foreground">MeaCore</span>
           </a>
           <p className="text-muted-foreground max-w-md mx-auto">
             {t('footer.tagline')}
