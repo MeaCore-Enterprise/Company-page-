@@ -70,15 +70,15 @@ export default {
     cards: [
       {
         title: 'MeaCore Launcher',
-        description: 'Un launcher de Minecraft optimizado, rápido y con integración avanzada para la mejor experiencia de juego.',
+        description: 'El launcher de Minecraft de alto rendimiento para Linux. Optimizado, rápido y sin anuncios para la mejor experiencia de juego.',
       },
       {
-        title: 'MeaCode Studio',
-        description: 'Un IDE de escritorio orientado a IA, construido para la próxima generación de desarrolladores.',
+        title: 'Próximamente',
+        description: 'Estamos trabajando en nuevas herramientas revolucionarias. Vuelve pronto para descubrir nuestras próximas innovaciones.',
       },
       {
-        title: 'Nexusify SDK',
-        description: 'Un conjunto de herramientas para integrar IA avanzada en cualquier aplicación de forma sencilla.',
+        title: 'Próximamente',
+        description: 'Nuevos productos en desarrollo activo. Nuestro equipo de ingeniería está construyendo el futuro del software.',
       },
     ],
   },

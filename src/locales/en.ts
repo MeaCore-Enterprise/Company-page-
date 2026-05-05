@@ -69,16 +69,16 @@ export default {
     subDescription: 'These projects demonstrate real engineering decisions, product thinking, and hands-on experience with modern stacks. No demos for hype. Just proof of work.',
     cards: [
       {
-        title: 'Haker-MCP',
-        description: 'An internal ecosystem designed to streamline our development process and enhance project management.',
+        title: 'MeaCore Launcher',
+        description: 'The high-performance Minecraft launcher for Linux. Optimized, fast, and ad-free for the best gaming experience.',
       },
       {
-        title: 'Future SaaS (Stealth Mode)',
-        description: 'We are actively developing a suite of SaaS products aimed at solving key industry challenges. More details coming soon.',
+        title: 'Coming Soon',
+        description: 'We are actively developing revolutionary new tools. Check back soon to discover our next innovations.',
       },
       {
-        title: 'Internal Tooling',
-        description: 'A collection of proprietary tools for automation, testing, and deployment that ensures quality and speed for our clients.',
+        title: 'Coming Soon',
+        description: 'New products in active development. Our engineering team is building the future of software.',
       },
     ],
   },
